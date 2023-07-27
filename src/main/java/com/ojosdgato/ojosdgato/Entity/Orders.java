@@ -1,6 +1,9 @@
 package com.ojosdgato.ojosdgato.Entity;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -26,16 +29,19 @@ public class Orders {
 	
 	public Orders() {}
 	
-	@ManyToOne
+	@ManyToOne(cascade= CascadeType.ALL)
     @JoinColumn(name = "User_id_user", nullable = false)
+	@JsonBackReference(value="user-order") 
     private User user;
 	
-	@ManyToOne
+	@ManyToOne(cascade= CascadeType.ALL)
     @JoinColumn(name = "ServiceOrder_id_serviceorder", nullable = false)
-    private ServiceOrder serviceOrder;
+	@JsonBackReference(value="serviceOrder-order")
+	private ServiceOrder serviceOrder;
 	
-	@ManyToOne
+	@ManyToOne(cascade= CascadeType.ALL)
 	@JoinColumn(name= "ProductOrder_id_productorder", nullable=false)
+	@JsonBackReference(value="productOrder-order")
 	private ProductOrder productOrder;
 	
 	

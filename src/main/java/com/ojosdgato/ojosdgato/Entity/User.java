@@ -1,11 +1,16 @@
 package com.ojosdgato.ojosdgato.Entity;
 
 
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -29,6 +34,10 @@ public class User {
 	private String password;
 	@Column(nullable=false)
 	private int type;
+	
+	@OneToMany(mappedBy="user")
+	@JsonManagedReference(value="user-order")
+	private List<Orders> orders; 
 	
 	//Constructor vacio
 	public User() {}
