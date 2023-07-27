@@ -49,6 +49,4 @@ public class OrderRequest {
 		this.id_user = id_user;
 	}
 	
-	
-	
 }

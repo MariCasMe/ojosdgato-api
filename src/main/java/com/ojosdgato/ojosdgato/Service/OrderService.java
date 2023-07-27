@@ -44,22 +44,22 @@ public class OrderService {
 	public Orders getOrderById(Long id) {
 		return ordersRepository.findById(id).orElse(null);
 	}
-	//Crear Post
+/*	//Crear Post
 	public Orders createOrder(Orders order) {
 		return ordersRepository.save(order);
 	}
-/*	//Actualiza Put
+	//Actualiza Put
 	public Orders updateOrder(Orders order) {
 		return ordersRepository.save(order);
-	}
+	}*/
 	
 	//Borrar Delete
 	public void deleteOrder(Long id) {
 		ordersRepository.deleteById(id);
 	
-	}*/
+	}
 	// POST METHOD
-	/*	public Orders createOrder(OrderRequest orderRequest) {
+		public Orders createOrder(OrderRequest orderRequest) {
 			
 			// Get data from and save them
 			int shipping = orderRequest.getShipping();
@@ -87,5 +87,5 @@ public class OrderService {
 			
 			// save it
 			return ordersRepository.save(orders);
-		}*/
+		}
 }
