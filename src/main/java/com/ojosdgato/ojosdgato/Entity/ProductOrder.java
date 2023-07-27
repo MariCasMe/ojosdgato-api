@@ -32,7 +32,7 @@ public class ProductOrder {
     private Product product;
 
 	@OneToMany(mappedBy="productOrder")
-	@JsonManagedReference(value="productOrder-order")
+	@JsonManagedReference(value="productorder-order")
 	private List<Orders> orders; 
 	
 	public long getId_productorder() {

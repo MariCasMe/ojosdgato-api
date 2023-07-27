@@ -33,7 +33,7 @@ public class ServiceOrder {
     private Services service;
 
     @OneToMany(mappedBy="serviceOrder")
-	@JsonManagedReference(value="serviceOrder-order")
+    @JsonManagedReference(value="serviceorder-order")
 	private List<Orders> orders; 
 
     // Getters y Setters

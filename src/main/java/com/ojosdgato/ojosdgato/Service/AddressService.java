@@ -25,6 +25,10 @@ public class AddressService {
 		//return addressRepository.findById(id).orElse(null);
 		return addressRepository.findById(id).orElse(null);
 	}
+	public Address getAddressByUser(Long user_id) {
+		return addressRepository.findBy(null, null);
+	}
+	
 	//Crear Post
 	public Address createAddress(Address address) {
 		return addressRepository.save(address);

@@ -1,6 +1,8 @@
 package com.ojosdgato.ojosdgato.Service;
 
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
@@ -33,36 +35,37 @@ public class OrderService {
 		this.userRepository = userRepository;
 	}
 
-/*	//Obtener Get
+	//Obtener Get
 	public List<Orders> getAllOrders(){
-		return orderRepository.findAll();
+		return ordersRepository.findAll();
 	}
 	
 	//Get by ID
 	public Orders getOrderById(Long id) {
-		return orderRepository.findById(id).orElse(null);
+		return ordersRepository.findById(id).orElse(null);
 	}
-	//Crear Post
+/*	//Crear Post
 	public Orders createOrder(Orders order) {
-		return orderRepository.save(order);
+		return ordersRepository.save(order);
 	}
 	//Actualiza Put
 	public Orders updateOrder(Orders order) {
-		return orderRepository.save(order);
-	}
+		return ordersRepository.save(order);
+	}*/
 	
 	//Borrar Delete
 	public void deleteOrder(Long id) {
-		orderRepository.deleteById(id);
+		ordersRepository.deleteById(id);
 	
-	}*/
+	}
 	// POST METHOD
 		public Orders createOrder(OrderRequest orderRequest) {
 			
-			// Get data from users and save them
+			// Get data from and save them
 			int shipping = orderRequest.getShipping();
 		    int status = orderRequest.getStatus();
 			String comment=orderRequest.getComment();
+			
 			Long id_serviceorder = orderRequest.getId_serviceorder();
 			Long id_productorder = orderRequest.getId_productorder();
 			Long id_user = orderRequest.getId_user();
