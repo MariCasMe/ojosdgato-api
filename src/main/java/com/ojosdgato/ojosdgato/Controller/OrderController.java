@@ -1,8 +1,10 @@
 package com.ojosdgato.ojosdgato.Controller;
 
-
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,7 +21,7 @@ import com.ojosdgato.ojosdgato.Service.UserService;
 public class OrderController {
 	
 	private OrderService orderService;
-/*	private ServiceOrderService serviceOrderService;
+	/*private ServiceOrderService serviceOrderService;
 	private ProductOrderService productOrderService;
 	private UserService userService;*/
 	
@@ -29,12 +31,12 @@ public class OrderController {
 			ProductOrderService productOrderService, UserService userService) {
 		super();
 		this.orderService = orderService;
-		/*this.serviceOrderService = serviceOrderService;
-		this.productOrderService = productOrderService;
-		this.userService = userService;*/
+	//	this.serviceOrderService = serviceOrderService;
+	//	this.productOrderService = productOrderService;
+	//	this.userService = userService;
 	}
 	
-	/*@GetMapping
+	@GetMapping
 	public List<Orders> getOrder(){
 		return orderService.getAllOrders();
 	}
@@ -45,7 +47,7 @@ public class OrderController {
 		return orderService.getOrderById(id);
 	}
 	
-	@PostMapping
+/*	@PostMapping
 	public Orders createOrder(@RequestBody Orders order) {
 		//Buscar un usuario que haga match en bd
 		User persistentUser=userService.getUserById(order.getUser().getId_user());
@@ -74,8 +76,8 @@ public class OrderController {
 	// OrderRequest es un DTO
 		// Data Transfer Object, solamente se utilizan para el proceso de transferencias
 		@PostMapping
-		public Orders createOrder(@RequestBody OrderRequest orderRequest) {
-			return orderService.createOrder(orderRequest);
+		public Orders createOrder(@RequestBody Orders order) {
+			return orderService.createOrder(order);
 		}
 	
 }

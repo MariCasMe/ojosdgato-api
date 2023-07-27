@@ -2,9 +2,6 @@ package com.ojosdgato.ojosdgato.Entity;
 
 
 import java.util.List;
-
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -36,7 +33,6 @@ public class User {
 	private int type;
 	
 	@OneToMany(mappedBy="user")
-	@JsonManagedReference(value="user-order")
 	private List<Orders> orders; 
 	
 	//Constructor vacio

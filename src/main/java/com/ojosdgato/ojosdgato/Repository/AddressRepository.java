@@ -7,5 +7,4 @@ import com.ojosdgato.ojosdgato.Entity.Address;
 
 @Repository
 public interface AddressRepository extends JpaRepository<Address, Long> {
-
 }
