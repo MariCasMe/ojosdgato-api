@@ -7,10 +7,10 @@ public class OrderRequest {
 	private int shipping;
 	private int status;
 	private String comment;
+
 	private Long id_serviceorder;
 	private Long id_productorder;
 	private Long id_user;
-	
 	//Getters y setters
 	public int getShipping() {
 		return shipping;
